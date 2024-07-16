@@ -1,0 +1,45 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.pokemon-card-types {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.pokemon-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pokemon-card-text-container {
+  text-align: left;
+}
+.pokemon-card-name {
+  display: block;
+}
+.pokemon-card-name::first-letter {
+  text-transform: uppercase;
+}
+.pokemon-card-number {
+  display: block;
+  color: darkgray;
+}
+.pokemon-card-sprite {
+  display: block;
+  aspect-ratio: 1/1;
+  width: 96px;
+  height: auto;
+}
