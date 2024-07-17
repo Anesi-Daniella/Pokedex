@@ -9,14 +9,17 @@ export default function App() {
     {}
   );
 
-  const sortedPokemonData = useMemo(() => {
+  const sortPokemon = () => {
     if (!pokemonData) return null;
-    return [...pokemonData].sort((a, b) => {
+    const sortedPokemon = [...pokemonData].sort((a, b) => {
       if (sortOrder === 'az') return a.name.localeCompare(b.name);
       if (sortOrder === 'za') return b.name.localeCompare(a.name);
       return a.cardNumber - b.cardNumber;
     });
-  }, [pokemonData, sortOrder]);
+    return sortedPokemon;
+  };
+
+  const sortedPokemonData = useMemo(sortPokemon, [pokemonData, sortOrder]);
 
   useEffect(() => {
     if (pokemonData) {
